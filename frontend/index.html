@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:,">
 </head>
 <body>
     <div class="disclaimer" id="disclaimer">
@@ -14,7 +15,29 @@
         <h1>Medicine Tracker</h1>
     </header>
     <main>
-
+        <!-- Medicine List Section -->
+        <div class="list-section">
+            <h2>Medicine List</h2>
+            <table> 
+                <thead id = medicineTableHead>
+                    <tr>
+                        <th>Medicine Name</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody id="medicineTableBody">
+                    <!-- Medicine rows will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+        <!-- Input Section For New Medicines -->
+        <div class="input-section">
+            <h2>Add New Medicine</h2>
+            <input type="text" id="newMedicineName" placeholder="Medicine Name">
+            <!-- Only take real numbers that are valid prices (No negative prices) -->
+            <input type="number" id="newMedicinePrice" min="0" step="0.01" placeholder="Medicine Price">
+            <button id="addMedicineBtn">Add Medicine</button>
+        </div>
     </main>
     <script src="script.js"></script>
 </body>
