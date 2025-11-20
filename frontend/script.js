@@ -1,4 +1,4 @@
-
+// Using asynchronous function to fetch medicines from the backend to prevent any UI freezing
 async function fetchMedicines() {
     try {
         const response = await fetch("http://localhost:8000/medicines")
@@ -26,9 +26,26 @@ function displayMedicines(medicines) {
                 </tr>
             `;
         }
+        
     }
     placeholder.innerHTML = out;
 }
+
+async function fetchAveragePrice() {
+    try {
+        const response = await fetch("http://localhost:8000/average_price")
+        const data = await response.json();
+        // After fetching the average price, display it in the designated area to 2 decimal places
+        const averagePriceValue = document.getElementById("averagePriceValue");
+        averagePriceValue.style.display = "block";
+        averagePriceValue.innerText = `£${data.toFixed(2)}`;
+    } catch (error) {
+        console.error('Error fetching average price', error);
+    }
+}
+
+// Call the function to fetch average price on page load
+fetchAveragePrice();
 
 document.getElementById("addMedicineBtn").addEventListener("click", async function() {
     const nameInput = document.getElementById("newMedicineName");
@@ -57,6 +74,7 @@ document.getElementById("addMedicineBtn").addEventListener("click", async functi
     nameInput.value = "";
     priceInput.value = "";  
     
-    // Refresh the medicine list after adding a new medicine
+    // Refresh the medicine list and average price after adding a new medicine
     fetchMedicines();
+    fetchAveragePrice();
 });

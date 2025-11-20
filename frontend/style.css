@@ -30,3 +30,107 @@ body {
 }
 
 /* ---- Your custom styles below ---- */
+
+/* Putting the table of medicines and the right section side by side */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+/* Stacking elements in the right section vertically and centering them */
+.right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Setting a fixed width for the elements in the right section */
+.right-section > div {
+    width: 600px;
+}
+
+/* Styling the table of medicines */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+/* Styling the table and making it red */
+thead th {
+    background-color: #F01716;
+    color: white;
+    padding: 12px 20px;
+    font-weight: bold;
+}
+td {
+    padding: 12px 20px;
+    border-bottom: 1px solid #ddd;
+}
+/* Alternating row colors and hover effect */
+tbody tr:nth-child(even) td{
+    background-color: white;
+}
+tbody tr:nth-child(odd) td{
+    background-color: #faf7f2;
+}
+tbody tr:hover td {
+    background-color: #ffe6e9;
+}
+
+.add-medicine {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-top: 65px;
+}
+
+.add-medicine input {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+/* Making the button red and styled */
+.add-medicine button {
+    background-color: #F01716;
+    border-radius: 6px;
+    padding: 10px 15px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.add-medicine button:hover {
+    opacity: 0.8;
+}
+
+.average-price {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-top: 40px;
+    text-align: center;
+}
+
+header {
+    width: 100%;
+    background: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+/* Styling the header title, making the text red */
+header h1 {
+    width: 90%;
+    margin: auto;
+    font-size: 2rem;
+    color: #F01716;
+}
